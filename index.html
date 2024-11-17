@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loading-screen.css">
+    <link rel="stylesheet" href="css/game-screen.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/kripken/ammo.js@HEAD/builds/ammo.wasm.js"></script>
+    <script src="main.js" type="module"></script>
+</head>
+<body>
+    <div class="container home-screen">
+        <div class="subcontainer-top">
+            <div class="volume">
+                <button class="fa fa-sharp fa-solid fa-volume-high" tabindex="-1" id="volume-on"></button>
+                <button class="fa fa-sharp fa-solid fa-volume-xmark hidden" tabindex="-1" id="volume-off"></button>
+            </div>
+        </div>
+        <div class="subcontainer-mid">
+            <h1 class="title">Endless 3D Run</h1>
+            <div class="buttons">
+                <button tabindex="-1" id="play-button"><span></span><p>PLAY</p></button>
+                <button tabindex="-1" id="options-button"><span></span><p>OPTIONS</p></button>
+            </div>
+            <div class="options-list hidden">
+                <div class="option">
+                    <p class="option-label">Player Speed</p>
+                    <div class="option-value">52</div>
+                    <input type="range" min="15" max="100" value="52" id="playerSpeed">
+                </div>
+                <div class="option">
+                    <p class="option-label">Max Jump Distance</p>
+                    <div class="option-value">27</div>
+                    <input type="range" min="5" max="70" value="27" id="maxJumpDistance">
+                </div>
+                <div class="option">
+                    <p class="option-label">Bloom</p>
+                    <p id="note">(can cause performance issues)</p>
+                    <div class="option-value">On</div>
+                    <input type="checkbox" id="bloomEnabled" checked="true">
+                </div>
+ 
+                <button class="fa fa-solid fa-angles-left" id="back-button" tabindex="-1"></button>
+            </div>
+        </div>
+        <div class="subcontainer-bot">
+            <div class="settings-icon">
+                <button class="fa fa-solid fa-gear" id="settings" tabindex="-1"></button>
+            </div>
+            <div class="social-media">
+                <a href="https://twitter.com" class="fa fa-brands fa-twitter" target="_blank" tabindex="-1"></a>
+                <a href="https://discord.com" class="fa fa-brands fa-discord" target="_blank" tabindex="-1"></a>
+                <a href="https://youtube.com" class="fa fa-brands fa-youtube" target="_blank" tabindex="-1"></a>
+                <a href="https://www.linkedin.com" class="fa fa-brands fa-linkedin" target="_blank" tabindex="-1"></a>
+            </div>
+        </div>
+    </div>
+    <div class="container loading-screen hidden">
+        <div class="ring">
+            Loading
+            <span></span>
+        </div>
+    </div>
+    <div class="game-screen hidden">
+        <div class="start">
+            <h1>Click To Start</h1>
+        </div>
+        <div class="score">
+            <h1>0</h1>
+        </div>
+        <div class="game-canvas"></div>
+        <div class="game-over hidden">
+            <h1>YOU DIED</h1>
+            <div class="scores">
+                <p id="current-score">Score: 0</p>
+                <p id="best-score">Best: 0</p>
+            </div>
+            <div class="buttons">
+                <button tabindex="-1" id="retry-button"><span></span><p>RETRY</p></button>
+                <button tabindex="-1" id="exit-button"><span></span><p>EXIT</p></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
